@@ -1165,10 +1165,12 @@ button:focus {
     margin-top: 10px;
 }
 
-.modal__block h2 {
+.modal__close,
+.login__close {
     position: absolute;
     top: -3%;
     left: 100%;
+    z-index: 30;
 
     cursor: pointer;
     transition: transform .2s linear;
