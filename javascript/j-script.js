@@ -24,20 +24,6 @@ $(document).ready(function() {
 
     // Modal /========================/
 
-    $('.modal__close').on('click', function() {
-        $('.modal').fadeOut(300).removeClass('modal_opened');
-        $('body').removeClass('lock');
-
-        if ($('.burger').css('display') === 'flex') {            
-            $('body').addClass('lock');
-        }
-     });   
-
-    $('.modal__close.modal__close_login').on('click', function() {
-        $('.modal').fadeOut(300).removeClass('modal_opened');
-        $('body').removeClass('lock');   
-    });
-
     $('.btn_intro').on('click', function() {
 
         $('body').addClass('lock');
@@ -52,19 +38,25 @@ $(document).ready(function() {
         setTimeout(alertWindow, 400);       
     });
 
-    $('.btn-login').on('click', function() {
-
-        $('body').addClass('lock');
+    $('.btn-login').on('click', function() {        
         $('.modal[data-modal="window-password"]').fadeIn(300).addClass('modal_opened');        
         setTimeout(alertWindow, 400);       
     });
 
     $('.btn-login.btn-login_burger').on('click', function() {        
-        $('.modal[data-modal="window-password"]').fadeIn(300).addClass('modal_opened');        
-              
+        $('.modal[data-modal="window-password"]').fadeIn(300).addClass('modal_opened');
     });
 
-    $('.btn_intro.btn_blog').off(); 
+    $('.btn_intro.btn_blog').off();
+
+    $('.modal__close').on('click', function() {    
+        $('body').removeClass('lock');              
+        $('.modal').fadeOut(300).removeClass('modal_opened');
+    });
+    
+    $('.login__close').on('click', function() {
+        $('.modal').fadeOut(300).removeClass('modal_opened');
+    });
 
     function alertWindow() {
         alert("Attention, the opened window is a demo, it's not functional.");
